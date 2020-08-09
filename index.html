@@ -1,63 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#228B22" />
+    <meta name="author" content="Daniel Bradford" />
+    <meta
+      name="description"
+      content="Memory Game made with HTML, CSS, JAVASCRIPT and JQUERY"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/winning.webp"
+      samesite="none"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Montserrat&display=swap"
+      rel="stylesheet"
+      samesite="none"
+    />
+    <link
+      rel="stylesheet"
+      samesite="none"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+      samesite="none"
+    />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#228B22" />
-	<meta name="author" content="Daniel Bradford" />
-	<meta name="description" content="Memory Game made with HTML, CSS, JAVASCRIPT and JQUERY" />
-	<link rel="shortcut icon" href="assets/images/winning.webp" samesite="none">
-	<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Montserrat&display=swap" rel="stylesheet"
-		samesite="none" />
-	<link rel="stylesheet" samesite="none"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"
-		samesite="none" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <title>Memory Game</title>
+  </head>
 
-	<link rel="stylesheet" href="assets/css/style.css" />
-	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-	<title>Memory Game</title>
-</head>
-
-<body>
-	<header>
-		<h1>MEMORY CARD GAME</h1>
-	</header>
-	<div class="container-fluid game">
-		<div class="row">
-			<div id="c1" class="card"><img data-id="slice" src="./assets/images/slice.jpg" alt="slice cake"></div>
-			<div id="c2" class="card"><img data-id="blue" src="./assets/images/blue.jpg" alt="blueberry cake"></div>
-			<div id="c3" class="card"><img data-id="slice" src="./assets/images/slice.jpg" alt="slice cake"></div>
-            <div id="c4" class="card"><img data-id="egg" src="./assets/images/egg.jpg" alt="egg"></div>
-		</div>
-		<div class="row">
-			<div id="c5" class="card"><img data-id="bread" src="./assets/images/bread.jpg" alt="bread "></div>
-			<div id="c6" class="card"><img data-id="straw" src="./assets/images/straw.jpg" alt="straw cake"></div>
-			<div id="c7" class="card"><img data-id="macc" src="./assets/images/macc.jpg" alt="macc cake"></div>
-            <div id="c8" class="card"><img data-id="egg" src="./assets/images/egg.jpg" alt="egg"></div>
-		</div>
-		<div class="row">
-			<div id="c9" class="card"><img data-id="straw" src="./assets/images/straw.jpg" alt="straw cake"></div>
-			<div id="c10" class="card"><img data-id="blue" src="./assets/images/blue.jpg" alt="blueberry cake"></div>
-			<div id="c11" class="card"><img data-id="bread" src="./assets/images/bread.jpg" alt="bread cake"></div>
-            <div id="c12" class="card"><img data-id="macc" src="./assets/images/macc.jpg" alt="macc cake"></div>
-		</div>
-
-    <div class="row">
-    <button id="reset">Reset</button>
+  <body>
+    <header>
+      <div class="row">
+        <div class="col-6"><h1>Luigi's Kitchen</h1></div>
+        <div class="col-6">
+          <ul>
+            <li><h2>How to Play</h2></li>
+            <li><h2>Contact Us</h2></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="status">
+      <div class="row">
+        <div class="col-4">Points</div>
+        <div class="col-4">Timer</div>
+        <div class="col-4"></div>
+      </div>
     </div>
-	</div>
+    <div class="row game">
+      <div class="col-4"></div>
+      <div class="col-8">
+        <div class="row">
+          <div id="c1" class="card">
+            <img
+              data-id="slice"
+              src="./assets/images/slice.jpg"
+              alt="slice cake"
+            />
+          </div>
+          <div id="c2" class="card">
+            <img
+              data-id="blue"
+              src="./assets/images/blue.jpg"
+              alt="blueberry cake"
+            />
+          </div>
+          <div id="c3" class="card">
+            <img
+              data-id="slice"
+              src="./assets/images/slice.jpg"
+              alt="slice cake"
+            />
+          </div>
+          <div id="c4" class="card">
+            <img data-id="egg" src="./assets/images/egg.jpg" alt="egg" />
+          </div>
+        </div>
+        <div class="row">
+          <div id="c5" class="card">
+            <img data-id="bread" src="./assets/images/bread.jpg" alt="bread " />
+          </div>
+          <div id="c6" class="card">
+            <img
+              data-id="straw"
+              src="./assets/images/straw.jpg"
+              alt="straw cake"
+            />
+          </div>
+          <div id="c7" class="card">
+            <img
+              data-id="macc"
+              src="./assets/images/macc.jpg"
+              alt="macc cake"
+            />
+          </div>
+          <div id="c8" class="card">
+            <img data-id="egg" src="./assets/images/egg.jpg" alt="egg" />
+          </div>
+        </div>
+        <div class="row">
+          <div id="c9" class="card">
+            <img
+              data-id="straw"
+              src="./assets/images/straw.jpg"
+              alt="straw cake"
+            />
+          </div>
+          <div id="c10" class="card">
+            <img
+              data-id="blue"
+              src="./assets/images/blue.jpg"
+              alt="blueberry cake"
+            />
+          </div>
+          <div id="c11" class="card">
+            <img
+              data-id="bread"
+              src="./assets/images/bread.jpg"
+              alt="bread cake"
+            />
+          </div>
+          <div id="c12" class="card">
+            <img
+              data-id="macc"
+              src="./assets/images/macc.jpg"
+              alt="macc cake"
+            />
+          </div>
+          <div class="buttons">
+            <button onclick="resetGame()" id="reset">Reset</button>
+          </div>
+        </div>
+        <div><img class="chef" src="assets/images/chef.png" /></div>
+      </div>
+    </div>
 
-
-	<footer></footer>
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous" samesite="none">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"
-		samesite="none"></script>
-	<script src="assets/js/logic.js"></script>
-</body>
-
+    <footer></footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+      samesite="none"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+      samesite="none"
+    ></script>
+    <script src="assets/js/logic.js"></script>
+  </body>
 </html>
