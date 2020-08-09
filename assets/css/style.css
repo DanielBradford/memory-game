@@ -1,14 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik+Mono+One&display=swap");
+
+body {
+  background: url("/assets/images/kitchen.jpg") no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header {
+  opacity: 0.9;
+}
+h1 {
+  font-family: "Rubik Mono One", sans-serif;
+  color: #00575f;
+  background-color: white;
+  border: solid #00575f 4px;
+  border-radius: 2em;
+}
+
+h2 {
+  font-family: "Rubik Mono One", sans-serif;
+  color: #00575f;
+  background-color: white;
+}
+
+header ul{
+    list-style-type: none;
+}
+.row {
+  display: flex;
+}
+
 .card {
-  width: 150px;
-  height: 150px;
-  margin: 0.5em;
-  box-shadow: solid grey 1px;
-  background: lightblue url("./assets/images/whisk.png") no-repeat fixed center;
+  z-index: 400;
+  width: 10em;
+  margin: 2px;
+  display: flex;
+  border: solid white 1px;
+  background-color: lightblue;
+  border-radius: 3em;
+}
+
+img {
+  border-radius: 3em;
 }
 
 .card:hover {
   cursor: pointer;
-  border: solid greenyellow 5px;
+  border: solid #def0d9 5px;
 }
 
 .card img {
@@ -19,4 +59,22 @@
 
 .correct {
   border: solid greenyellow 5px;
+}
+
+header {
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.chef {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 650px;
+}
+
+
+footer{
+    height: 200px;
 }
