@@ -1,0 +1,22 @@
+.card {
+  width: 150px;
+  height: 150px;
+  margin: 0.5em;
+  box-shadow: solid grey 1px;
+  background: lightblue url("./assets/images/whisk.png") no-repeat fixed center;
+}
+
+.card:hover {
+  cursor: pointer;
+  border: solid greenyellow 5px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.correct {
+  border: solid greenyellow 5px;
+}
